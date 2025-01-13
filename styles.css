@@ -1,0 +1,764 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: italic;
+    background: linear-gradient(180deg, #D1D8E0, #B0C4DE);
+    padding-top: 70px; /* Espaço para o cabeçalho fixo */
+}
+
+/* Estilos do Cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave e moderna */
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+/* Contêiner do Cabeçalho */
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    padding: 15px 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #1E2A47; /* Cor escura para contraste moderno */
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Font mais moderna */
+}
+
+/* Estilos da Seção de Opções */
+.options-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -1px; /* Espaço entre o cabeçalho fixo e a seção */
+    border-top: 3px solid white; /* Borda superior */
+    border-bottom: 3px solid white; /* Borda inferior */
+    padding: 12px 0; /* Ajuste de padding para que a borda fique mais visível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para separar da seção de conteúdo */
+    background-color: white;
+}
+
+/* Lista de opções */
+.options-nav ul {
+    display: flex;
+    gap: 40px; /* Maior espaço entre as opções */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo das opções */
+.options-nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: darkred;
+    padding: 12px 25px;
+    border-radius: 8px; /* Borda arredondada para dar um visual mais moderno */
+    transition: all 0.3s ease;
+    font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Efeito de Hover */
+.options-nav a:hover {
+    background-color: #007BFF;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais forte para destacar no hover */
+    transform: translateY(-2px); /* Efeito sutil de elevação no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+
+    .options-nav ul {
+        gap: 25px;
+    }
+
+    .options-nav a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Estilizando o carrossel */
+
+
+.about-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
+}
+.swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #e3f2fd);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+    border: 3px solid #1e88e5;
+}
+.swiper-slide:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: #005cb2;
+}
+.swiper-slide i {
+    font-size: 60px;
+    color: #1e88e5;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.swiper-slide:hover i {
+    color: #005cb2;
+    transform: rotate(15deg) scale(1.2);
+}
+.swiper-slide h3 {
+    font-size: 26px;
+    color: #1e293b;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.swiper-slide p {
+    font-size: 18px;
+    color: #374151;
+    line-height: 1.6;
+}
+.swiper-slide a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+.swiper-slide a:hover {
+    color: #005cb2;
+    border-bottom: 2px solid #005cb2;
+}
+
+/* Estilizando a paginação */
+.swiper-pagination-bullet {
+    background: #1e88e5;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.5);
+    background: #005cb2;
+}
+
+/* Adicionando animações */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.swiper-slide:hover {
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .swiper-slide {
+        padding: 30px 20px;
+    }
+    .swiper-slide i {
+        font-size: 48px;
+    }
+    .swiper-slide h3 {
+        font-size: 22px;
+    }
+    .swiper-slide p {
+        font-size: 16px;
+    }
+}
+
+/* Seção de Análise */
+.section {
+    padding: 40px 20px;
+    margin: 40px 0;
+}
+
+.section-header h2 {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Container das informações de análise */
+.analysis-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+
+/* Estilo da seção Últimas Notícias */
+.latest-news {
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.5));
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
+}
+
+.latest-news::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.3), transparent);
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+.latest-news:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.latest-news:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.7));
+}
+
+/* Título */
+.latest-news h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #007BFF;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #0056b3;
+    display: inline-block;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem */
+.news-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-image:hover img {
+    transform: scale(1.2);
+}
+
+/* Texto descritivo */
+.latest-news p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão */
+.enter-news-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0056b3, #007BFF);
+    color: #fff;
+    font-size: 18px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.enter-news-btn:hover {
+    background: linear-gradient(135deg, #003c7d, #0056b3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .latest-news h3 {
+        font-size: 24px;
+    }
+
+    .news-image {
+        height: 200px;
+    }
+
+    .latest-news p {
+        font-size: 16px;
+    }
+
+    .enter-news-btn {
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+}
+
+/* Estilizando o bloco de Informações Gerais */
+.general-info {
+    background-color: #fff;
+    padding: 30px; /* Aumente o padding para dar mais espaço */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
+    flex: 1;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Título da seção de informações gerais */
+.general-info h3 {
+    font-size: 26px; /* Aumente o tamanho do título */
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #007BFF; /* Linha embaixo do título */
+    padding-bottom: 5px;
+}
+
+/* Estilo dos itens de informação */
+.info-item {
+    margin-bottom: 25px; /* Aumente o espaçamento entre os itens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd; /* Linha de separação entre os itens */
+    padding-bottom: 10px;
+}
+
+/* Títulos dos itens de informação */
+.info-item h4 {
+    font-size: 20px; /* Aumente o tamanho dos títulos */
+    color: #333;
+    font-weight: 600;
+    margin-right: 15px;
+    text-transform: capitalize;
+}
+
+/* Conteúdo dos itens de informação */
+.info-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Seção de Análise: Ajuste do layout para responsividade */
+@media (max-width: 768px) {
+    .general-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilizando a seção de Informações Gerais */
+.general-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* Estilo do título da seção */
+.general-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilizando os itens dentro da seção de Informações Gerais */
+.info-item {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Títulos dos itens */
+.info-item h4 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+/* Texto dos itens */
+.info-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Estilizando o botão de cada item */
+.info-item .info-btn {
+    background-color: #007BFF; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover nos botões */
+.info-item .info-btn:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+/* Responsividade - Ajustando para telas menores */
+@media (max-width: 768px) {
+    .general-info {
+        padding: 15px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-item h4 {
+        font-size: 16px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+    }
+
+    .info-item .info-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Estilo geral para os botões */
+button {
+    background-color: #007BFF; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 12px 20px; /* Espaçamento interno */
+    border-radius: 6px; /* Cantos arredondados */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo do acordeão */
+.accordion {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilo de cada item do acordeão */
+.accordion-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do cabeçalho do acordeão */
+.accordion-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Alteração de cor ao passar o mouse sobre o botão */
+.accordion-header:hover {
+    background-color: #2980b9;
+    transform: translateX(5px); /* Pequeno movimento de deslize para a direita */
+}
+
+/* Estilo do conteúdo do acordeão */
+.accordion-body {
+    padding: 0 15px;
+    background-color: #ecf0f1;
+    color: #333;
+    font-size: 16px;
+    display: none; /* Inicialmente escondido */
+    padding-bottom: 15px;
+}
+
+/* Estilo quando o item do acordeão estiver ativo (aberto) */
+.accordion-item.active .accordion-body {
+    display: block;
+    animation: slideIn 0.5s ease-out; /* Animação de deslizamento */
+}
+
+/* Animação de deslizamento */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo do botão de fechar do menu */
+#close-menu {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito de hover do botão de fechar */
+#close-menu:hover {
+    background-color: #c0392b;
+    transform: scale(1.1); /* Aumenta levemente o tamanho ao passar o mouse */
+}
+
+/* Personalização do ícone de hambúrguer */
+#hamburger-menu.open .bar {
+    background-color: #e74c3c; /* Cor vermelha para a versão aberta */
+}
+
+/* Estilo Geral da Seção Staff */
+#staff {
+    margin: 60px auto;
+    padding: 50px 20px;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cabeçalho da Seção */
+#staff .section-header h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#staff .section-header p {
+    font-size: 1.3em;
+    color: black;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* Cartão Staff */
+.staff-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.staff-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Ícone */
+.staff-card .icon-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(135deg, #e3f2fd, #1e88e5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: float 2s infinite ease-in-out;
+}
+
+.staff-card i {
+    font-size: 3em;
+    color: #1e293b;
+}
+
+/* Texto */
+.staff-card p {
+    font-size: 1.2em;
+    color: black;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de Flutuar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #staff {
+        padding: 40px 15px;
+    }
+
+    .staff-card {
+        padding: 30px 20px;
+    }
+
+    #staff .section-header h2 {
+        font-size: 2.2em;
+    }
+
+    #staff .section-header p {
+        font-size: 1.1em;
+    }
+
+    .staff-card p {
+        font-size: 1em;
+    }
+}
+
+/* Estilo do Rodapé */
+footer {
+    background: linear-gradient(45deg, #1e1e1e, #333);
+    padding: 20px 0;
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+}
+
+footer p:hover {
+    color: #f2c14e;
+    transition: color 0.3s ease-in-out;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f2c14e, #ff5733);
+    animation: gradient-flow 5s infinite;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
